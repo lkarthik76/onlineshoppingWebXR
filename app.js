@@ -12,7 +12,7 @@ class App{
         this.loadingBar = new LoadingBar();
         this.loadingBar.visible = false;
 
-		//this.assetsPath = './assets/';
+		this.assetsPath = './assets/';
         
 		this.camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 0.01, 20 );
 		this.camera.position.set( 0, 1.6, 0 );
@@ -117,7 +117,7 @@ class App{
 		// Load a glTF resource
 		loader.load(
 			// resource URL
-			`assets/chair${id}.glb`,
+			`chair${id}.glb`,
 			// called when the resource is loaded
 			function ( gltf ) {
 
@@ -149,9 +149,11 @@ class App{
         let currentSession = null;
         const self = this;
         
-        const sessionInit = { requiredFeatures: [ 'hit-test' ] };
+        const sessionInit = { requiredFeatures: [ 'hit-test' ],optionalFeatures: ['dom-overlay'], };
         
-        
+        sessionInit.domOverlay = { root: document.getElementById('content')};
+        document.body.appendChild( ARButton.createButton(self.renderer, sessionInit));
+
         function onSessionStarted( session ) {
 
             session.addEventListener( 'end', onSessionEnded );
@@ -209,7 +211,7 @@ class App{
             self.hitTestSourceRequested = false;
             self.hitTestSource = null;
             self.referenceSpace = null;
-
+            document.getElementById("Exit-button").style.display = "none";
         } );
 
         this.hitTestSourceRequested = true;
@@ -225,13 +227,15 @@ class App{
             const hit = hitTestResults[ 0 ];
             const pose = hit.getPose( referenceSpace );
 
+            document.getElementById("Exit-button").style.display = "block";
+
             this.reticle.visible = true;
             this.reticle.matrix.fromArray( pose.transform.matrix );
 
         } else {
 
             this.reticle.visible = false;
-
+            document.getElementById("Exit-button").style.display = "none";
         }
 
     }
