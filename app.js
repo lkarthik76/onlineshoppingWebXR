@@ -57,10 +57,10 @@ class App {
         function onPrev() {
             const session = self.renderer.xr.getSession();
             session.end();
-            self.chair = null;
-            self.renderer.setAnimationLoop(null);
-            self.scene.remove(self.ui.mesh);
-            //window.location.reload();
+            //self.chair = null;
+            //self.renderer.setAnimationLoop(null);
+            //self.scene.remove(self.ui.mesh);
+            window.location.reload();
         }
 
         const config = {
