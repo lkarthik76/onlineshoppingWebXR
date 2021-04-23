@@ -60,7 +60,7 @@ class App {
             self.chair = null;
             self.renderer.setAnimationLoop(null);
             self.scene.remove(self.ui.mesh);
-            window.location.reload();
+            //window.location.reload();
         }
 
         const config = {
