@@ -15,7 +15,7 @@
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="theme-color" content="#ffffff">
 
-  <title>AR Shop Homepage - Lecture 7.3</title>
+  <title>AR Shop Homepage</title>
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -26,26 +26,21 @@
 </head>
 
 <body>
-    <script src="libs/fas.js"></script>
-    <script type="module">
-        import { App } from './app.js';
+  <script src="libs/fas.js"></script>
+  <script type="module">
+    import { App } from './app.js';
 
-        document.addEventListener("DOMContentLoaded", function(){
-            const app = new App();
-            window.app = app;
-        });
-        //document.getElementById("Exit-button").style.display = "none";
-    </script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const app = new App();
+      window.app = app;
+    });
+  </script>
   <!-- Navigation -->
-
-  <div class="buttonbox" id="btnid"></div>
-  <button type="button" id="Exit-button">Exit AR</button>
-  </div>
-
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="#"><img src="assets/logo-nav.jpg"/> Furniture.com</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <a class="navbar-brand" href="#"><img src="assets/logo-nav.jpg" /> OnlineShopping WebXR.com</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
@@ -59,10 +54,10 @@
             <a class="nav-link" href="#">Basket</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="http://niklever.com/courses">Support</a>
+            <a class="nav-link" href="http://hcl.com/">Support</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="mailto:nik.j.lever@gmail.com">Contact</a>
+            <a class="nav-link" href="mailto:padmashri.s@hcl.com">Contact</a>
           </li>
         </ul>
       </div>
@@ -76,11 +71,12 @@
 
       <div class="col-lg-3">
 
-        <h1 class="my-4">Furniture.com</h1>
+        <h1 class="my-4">OnlineShopping.com</h1>
         <div class="list-group">
-          <a href="#" class="list-group-item">Office</a>
-          <a href="#" class="list-group-item">Home</a>
-          <a href="#" class="list-group-item">Resturant</a>
+          <a href="#man" class="list-group-item">Men</a>
+          <a href="#women" class="list-group-item">Woman</a>
+          <a href="#furniture" class="list-group-item">Furniture</a>
+          <a href="#accessories" class="list-group-item">Accessories</a>
         </div>
 
       </div>
@@ -116,110 +112,277 @@
         </div>
 
         <div class="row">
+          <div class="col-12">
 
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100">
-              <a href="#"><img class="card-img-top" src="assets/chair1.jpg" alt=""></a>
-              <div class="card-body">
-                <h4 class="card-title">
-                  <a href="#">Item One</a>
-                </h4>
-                <h5>$84.99</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
+
+            <div class="nav-main">
+              <!-- Tab Nav -->
+              <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#man" role="tab">Men</a></li>
+                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#women" role="tab">Women</a></li>
+                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#furniture" role="tab">Furniture</a>
+                </li>
+                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#accessories"
+                    role="tab">Accessories</a></li>
+              </ul>
+              <!--/ End Tab Nav -->
+            </div>
+            <div class="tab-content" id="myTabContent">
+              <!-- Start Single Tab -->
+              <div class="tab-pane fade show active" id="man" role="tabpanel">
+                <div class="tab-single">
+                  <div class="row">
+                    <div class="col-lg-4 col-md-6 mb-4">
+                      <div class="card h-100">
+                        <a href="#"><img class="card-img-top" src="assets/p20.jpg" alt=""></a>
+                        <div class="card-body">
+                          <h4 class="card-title">
+                            <a href="#">T-Shrit</a>
+                          </h4>
+                          <h5>$19.99</h5>
+                          <p class="card-text">FC Bayern Munchen T-Shirt</p>
+                        </div>
+                        <div class="card-footer">
+                          <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                          <button class="ar-button" onclick="window.app.showChair('dress');"><i
+                              class="fas fa-camera"></i></button>
+                        </div>
+
+                      </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 mb-4">
+                      <div class="card h-100">
+                        <a href="#"><img class="card-img-top" src="assets/p22.jpg" alt=""></a>
+                        <div class="card-body">
+                          <h4 class="card-title">
+                            <a href="#">Shirt</a>
+                          </h4>
+                          <h5>$24.99</h5>
+                          <p class="card-text">Oxford - Mens Shirt</p>
+                        </div>
+                        <div class="card-footer">
+                          <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                          <!-- <button class="ar-button" onclick="window.app.showChair('chair1');"><i class="fas fa-camera"></i></button> -->
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
               </div>
-              <div class="card-footer">
-                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                <button class="ar-button" onclick="window.app.showChair(1);"><i class="fas fa-camera"></i></button>
+              <div class="tab-pane fade show active" id="women" role="tabpanel">
+                <div class="tab-single">
+                  <div class="row">
+
+                    <div class="col-lg-4 col-md-6 mb-4">
+                      <div class="card h-100">
+                        <a href="#"><img class="card-img-top" src="assets/p18.jpg" alt=""></a>
+                        <div class="card-body">
+                          <h4 class="card-title">
+                            <a href="#">Woman pink dress</a>
+                          </h4>
+                          <h5>$84.99</h5>
+                          <p class="card-text">Women Pink Floral Print Dress</p>
+                        </div>
+                        <div class="card-footer">
+                          <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                          <button class="ar-button" onclick="window.app.showChair('dress');"><i
+                              class="fas fa-camera"></i></button>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 mb-4">
+                      <div class="card h-100">
+                        <a href="#"><img class="card-img-top" src="assets/p2.jpg" alt=""></a>
+                        <div class="card-body">
+                          <h4 class="card-title">
+                            <a href="#">Women Dress</a>
+                          </h4>
+                          <h5>$84.99</h5>
+                          <p class="card-text">Blue Top For Women</p>
+                        </div>
+                        <div class="card-footer">
+                          <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
               </div>
-              
+              <div class="tab-pane fade show active" id="furniture" role="tabpanel">
+                <div class="tab-single">
+                  <div class="row">
+
+                    <div class="col-lg-4 col-md-6 mb-4">
+                      <div class="card h-100">
+                        <a href="#"><img class="card-img-top" src="assets/chair1.jpg" alt=""></a>
+                        <div class="card-body">
+                          <h4 class="card-title">
+                            <a href="#">Item One</a>
+                          </h4>
+                          <h5>$84.99</h5>
+                          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam
+                            aspernatur!</p>
+                        </div>
+                        <div class="card-footer">
+                          <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                          <button class="ar-button" onclick="window.app.showChair('chair1');"><i
+                              class="fas fa-camera"></i></button>
+                        </div>
+
+                      </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 mb-4">
+                      <div class="card h-100">
+                        <a href="#"><img class="card-img-top" src="assets/chair2.jpg" alt=""></a>
+                        <div class="card-body">
+                          <h4 class="card-title">
+                            <a href="#">Item Two</a>
+                          </h4>
+                          <h5>$24.99</h5>
+                          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam
+                            aspernatur! Lorem ipsum dolor sit amet.</p>
+                        </div>
+                        <div class="card-footer">
+                          <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                          <button class="ar-button" onclick="window.app.showChair('Lamp01');"><i
+                              class="fas fa-camera"></i></button>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 mb-4">
+                      <div class="card h-100">
+                        <a href="#"><img class="card-img-top" src="assets/chair3.jpg" alt=""></a>
+                        <div class="card-body">
+                          <h4 class="card-title">
+                            <a href="#">Item Three</a>
+                          </h4>
+                          <h5>$24.99</h5>
+                          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam
+                            aspernatur!</p>
+                        </div>
+                        <div class="card-footer">
+                          <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                          <button class="ar-button" onclick="window.app.showChair('Sofa01');"><i
+                              class="fas fa-camera"></i></button>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 mb-4">
+                      <div class="card h-100">
+                        <a href="#"><img class="card-img-top" src="assets/chair4.jpg" alt=""></a>
+                        <div class="card-body">
+                          <h4 class="card-title">
+                            <a href="#">Item Four</a>
+                          </h4>
+                          <h5>$24.99</h5>
+                          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam
+                            aspernatur!</p>
+                        </div>
+                        <div class="card-footer">
+                          <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                          <button class="ar-button" onclick="window.app.showChair('Stool01');"><i
+                              class="fas fa-camera"></i></button>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 mb-4">
+                      <div class="card h-100">
+                        <a href="#"><img class="card-img-top" src="assets/chair5.jpg" alt=""></a>
+                        <div class="card-body">
+                          <h4 class="card-title">
+                            <a href="#">Item Five</a>
+                          </h4>
+                          <h5>$24.99</h5>
+                          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam
+                            aspernatur! Lorem ipsum dolor sit amet.</p>
+                        </div>
+                        <div class="card-footer">
+                          <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                          <button class="ar-button" onclick="window.app.showChair('Table01');"><i
+                              class="fas fa-camera"></i></button>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 mb-4">
+                      <div class="card h-100">
+                        <a href="#"><img class="card-img-top" src="assets/chair6.jpg" alt=""></a>
+                        <div class="card-body">
+                          <h4 class="card-title">
+                            <a href="#">Item Six</a>
+                          </h4>
+                          <h5>$24.99</h5>
+                          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam
+                            aspernatur!</p>
+                        </div>
+                        <div class="card-footer">
+                          <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                          <button class="ar-button" onclick="window.app.showChair('chair6');"><i
+                              class="fas fa-camera"></i></button>
+                        </div>
+                      </div>
+                    </div>
+
+
+
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane fade show active" id="accessories" role="tabpanel">
+                <div class="tab-single">
+                  <div class="row">
+
+                    <div class="col-lg-4 col-md-6 mb-4">
+                      <div class="card h-100">
+                        <a href="#"><img class="card-img-top" src="assets/ac-p2.jpg" alt=""></a>
+                        <div class="card-body">
+                          <h4 class="card-title">
+                            <a href="#">Item Bag</a>
+                          </h4>
+                          <h5>$84.99</h5>
+                          <p class="card-text">Baggit - Sling Bag</p>
+                        </div>
+                        <div class="card-footer">
+                          <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                          <button class="ar-button" onclick="window.app.showChair('handbag');"><i
+                              class="fas fa-camera"></i></button>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 mb-4">
+                      <div class="card h-100">
+                        <a href="#"><img class="card-img-top" src="assets/ac-p4.jpg" alt=""></a>
+                        <div class="card-body">
+                          <h4 class="card-title">
+                            <a href="#">Item Shoe</a>
+                          </h4>
+                          <h5>$84.99</h5>
+                          <p class="card-text">LONDON STEPS - Sanda</p>
+                        </div>
+                        <div class="card-footer">
+                          <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                          <button class="ar-button" onclick="window.app.showChair('Shoe');"><i
+                              class="fas fa-camera"></i></button>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+              <!--/ End Single Tab -->
             </div>
           </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100">
-              <a href="#"><img class="card-img-top" src="assets/chair2.jpg" alt=""></a>
-              <div class="card-body">
-                <h4 class="card-title">
-                  <a href="#">Item Two</a>
-                </h4>
-                <h5>$24.99</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.</p>
-              </div>
-              <div class="card-footer">
-                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                <button class="ar-button" onclick="window.app.showChair(2);"><i class="fas fa-camera"></i></button>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100">
-              <a href="#"><img class="card-img-top" src="assets/chair3.jpg" alt=""></a>
-              <div class="card-body">
-                <h4 class="card-title">
-                  <a href="#">Item Three</a>
-                </h4>
-                <h5>$24.99</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-              </div>
-              <div class="card-footer">
-                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                <button class="ar-button" onclick="window.app.showChair(3);"><i class="fas fa-camera"></i></button>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100">
-              <a href="#"><img class="card-img-top" src="assets/chair4.jpg" alt=""></a>
-              <div class="card-body">
-                <h4 class="card-title">
-                  <a href="#">Item Four</a>
-                </h4>
-                <h5>$24.99</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-              </div>
-              <div class="card-footer">
-                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                <button class="ar-button" onclick="window.app.showChair(4);"><i class="fas fa-camera"></i></button>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100">
-              <a href="#"><img class="card-img-top" src="assets/chair5.jpg" alt=""></a>
-              <div class="card-body">
-                <h4 class="card-title">
-                  <a href="#">Item Five</a>
-                </h4>
-                <h5>$24.99</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.</p>
-              </div>
-              <div class="card-footer">
-                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                <button class="ar-button" onclick="window.app.showChair(5);"><i class="fas fa-camera"></i></button>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100">
-              <a href="#"><img class="card-img-top" src="assets/chair6.jpg" alt=""></a>
-              <div class="card-body">
-                <h4 class="card-title">
-                  <a href="#">Item Six</a>
-                </h4>
-                <h5>$24.99</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-              </div>
-              <div class="card-footer">
-                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                <button class="ar-button" onclick="window.app.showChair(6);"><i class="fas fa-camera"></i></button>
-              </div>
-            </div>
-          </div>
-
         </div>
         <!-- /.row -->
 
