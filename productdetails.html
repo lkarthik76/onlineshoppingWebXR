@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!--favicon -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+    <link rel="manifest" href="libs/site.webmanifest">
+    <link rel="mask-icon" href="assets/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" type="text/css" href="common.css" />
+    <!-- Axios -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <title>AR Shop Homepage</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/shop-homepage.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <script src="libs/fas.js"></script>
+    <!-- <script type="text/javascript" src="productList.js"></script> -->
+
+    <script type="module">
+        import { Prod } from './productdetails.js'; document.addEventListener("DOMContentLoaded", function () { const prod = new Prod(); window.app = prod; });
+    </script>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#"><img src="assets/logo-nav.jpg" /> OnlineShopping WebXR </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home
+                        <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://xr-dea.services.hclets.com/">Support</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="mailto:padmashri.s@hcl.com">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumbs -->
+    <div class="breadcrumbs">
+        <div class="container">
+            <div class="row">
+                <div id="menu-outer" class="col-12">
+                    <div class="table">
+                        <br></br>
+                        <ul id="horizontal-list" class="bread-list">
+                            <a href="index.html">Home &#8594;</a>
+                            <a href="#">Product Details</a>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Breadcrumbs -->
+    <br><br>
+
+    <!--Section: Block Content-->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-12" id="model3d">
+                <canvas id="renderCanvas"></canvas>
+                <!-- <img class="card-img-top" src="assets/p20.jpg" alt=""></a> -->
+                <div id="js-tray" class="tray">
+                    <div id="js-tray-slide" class="tray__slide">
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-lg-6 col-12" id="content">
+                <h5 id="productname"></h5>
+                <div class="quickview-ratting-review">
+                    <div class="quickview-ratting-wrap">
+                        <div class="quickview-ratting">
+                            <i class="yellow fa fa-star"></i>
+                            <i class="yellow fa fa-star"></i>
+                            <i class="yellow fa fa-star"></i>
+                            <i class="yellow fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                        <a href="#"> (10 customer review)</a>
+                    </div>
+                    <div class="numberinstock">
+                        <span><i class="fa fa-check-circle-o"></i> in stock</span>
+                    </div>
+                </div>
+                <p><span id="productprice"><strong>Price goes here</strong></span></p>
+                <p id="productdescription">This is where the description will go</p>
+
+                <div><strong>Select Size</strong></div>
+                <div class="size-select">
+                    <INPUT TYPE="Radio" Name="size" ID="S1" Value="small">
+                    <LABEL FOR="S1">Small</LABEL>
+
+                    <INPUT TYPE="Radio" Name="size" ID="S2" Value="medium">
+                    <LABEL FOR="S2">Medium</LABEL>
+
+                    <INPUT TYPE="Radio" Name="size" ID="S3" Value="large">
+                    <LABEL FOR="S3">Large</LABEL>
+
+                    <INPUT TYPE="Radio" Name="size" ID="S4" Value="xlarge">
+                    <LABEL FOR="S4">X-Large</LABEL>
+                </div>
+
+                <div><strong>Quanity</strong></div>
+                <form class="quantity-select">
+                    <div class="value-button" id="decrease" onclick="decreaseValue()" value="Decrease Value">-
+                    </div>
+                    <input type="number" id="number" value="0" />
+                    <div class="value-button" id="increase" onclick="increaseValue()" value="Increase Value">+
+                    </div>
+                </form>
+                <div class="buttons">
+                    <button type="button" class="btn btn-primary btn-md mr-1 mb-2">Buy now</button>
+                    <button type="button" class="btn btn-light btn-md mr-1 mb-2"></i>Add to cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

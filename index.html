@@ -3,409 +3,449 @@
 
 <head>
 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <!--favicon -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
-  <link rel="manifest" href="libs/site.webmanifest">
-  <link rel="mask-icon" href="assets/safari-pinned-tab.svg" color="#5bbad5">
-  <meta name="msapplication-TileColor" content="#da532c">
-  <meta name="theme-color" content="#ffffff">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!--favicon -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+    <link rel="manifest" href="libs/site.webmanifest">
+    <link rel="mask-icon" href="assets/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
 
-  <title>AR Shop Homepage</title>
+    <!-- Axios -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
-  <!-- Bootstrap core CSS -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <title>AR Shop Homepage</title>
 
-  <!-- Custom styles for this template -->
-  <link href="css/shop-homepage.css" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/shop-homepage.css" rel="stylesheet">
 
 </head>
 
 <body>
-  <script src="libs/fas.js"></script>
-  <script type="module">
-    import { App } from './app.js';
+    <script src="libs/fas.js"></script>
+    <script type="text/javascript" src="productList.js"></script>
 
-    document.addEventListener("DOMContentLoaded", function () {
-      const app = new App();
-      window.app = app;
-    });
-  </script>
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <div class="container">
-      <a class="navbar-brand" href="#"><img src="assets/logo-nav.jpg" /> OnlineShopping WebXR.com</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
-        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+    <script type="module">
+        import { App } from './app.js'; document.addEventListener("DOMContentLoaded", function () { const app = new App(); window.app = app; });
+    </script>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#"><img src="assets/logo-nav.jpg" /> OnlineShopping WebXR </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home
-              <span class="sr-only">(current)</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Basket</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="http://hcl.com/">Support</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="mailto:padmashri.s@hcl.com">Contact</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Page Content -->
-  <div class="container">
-
-    <div class="row">
-
-      <div class="col-lg-3">
-
-        <h1 class="my-4">OnlineShopping.com</h1>
-        <div class="list-group">
-          <a href="#man" class="list-group-item">Men</a>
-          <a href="#women" class="list-group-item">Woman</a>
-          <a href="#furniture" class="list-group-item">Furniture</a>
-          <a href="#accessories" class="list-group-item">Accessories</a>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home
+                        <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://xr-dea.services.hclets.com/">Support</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="mailto:padmashri.s@hcl.com">Contact</a>
+                    </li>
+                </ul>
+            </div>
         </div>
+    </nav>
 
-      </div>
-      <!-- /.col-lg-3 -->
-
-      <div class="col-lg-9">
-
-        <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
-          <ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-          </ol>
-          <div class="carousel-inner" role="listbox">
-            <div class="carousel-item active">
-              <img class="d-block img-fluid" src="assets/banner1.jpg" alt="First slide">
-            </div>
-            <div class="carousel-item">
-              <img class="d-block img-fluid" src="assets/banner2.jpg" alt="Second slide">
-            </div>
-            <div class="carousel-item">
-              <img class="d-block img-fluid" src="assets/banner3.jpg" alt="Third slide">
-            </div>
-          </div>
-          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>
-        </div>
-
+    <!-- Page Content -->
+    <div class="container">
         <div class="row">
-          <div class="col-12">
+            <div class="col-lg-3">
+                <h4 class="my-2">Online Shoping Web XR</h4>
+                <div class="list-group" id="myList">
+                    <!-- <a href="#man" class="list-group-item">Men</a>
+                    <a href="#women" class="list-group-item">Woman</a>
+                    <a href="#furniture" class="list-group-item">Furniture</a>
+                    <a href="#accessories" class="list-group-item">Accessories</a> -->
+                </div>
 
-
-            <div class="nav-main">
-              <!-- Tab Nav -->
-              <ul class="nav nav-tabs" id="myTab" role="tablist">
-                <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#man" role="tab">Men</a></li>
-                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#women" role="tab">Women</a></li>
-                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#furniture" role="tab">Furniture</a>
-                </li>
-                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#accessories"
-                    role="tab">Accessories</a></li>
-              </ul>
-              <!--/ End Tab Nav -->
             </div>
-            <div class="tab-content" id="myTabContent">
-              <!-- Start Single Tab -->
-              <div class="tab-pane fade show active" id="man" role="tabpanel">
-                <div class="tab-single">
-                  <div class="row">
-                    <div class="col-lg-4 col-md-6 mb-4">
-                      <div class="card h-100">
-                        <a href="#"><img class="card-img-top" src="assets/p20.jpg" alt=""></a>
-                        <div class="card-body">
-                          <h4 class="card-title">
-                            <a href="#">T-Shrit</a>
-                          </h4>
-                          <h5>$19.99</h5>
-                          <p class="card-text">FC Bayern Munchen T-Shirt</p>
-                        </div>
-                        <div class="card-footer">
-                          <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                          <button class="ar-button" onclick="window.app.showChair('dress');"><i
-                              class="fas fa-camera"></i></button>
-                        </div>
+            <!-- /.col-lg-3 -->
 
-                      </div>
+            <div class="col-lg-9">
+
+                <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner" role="listbox">
+                        <div class="carousel-item active">
+                            <img class="d-block img-fluid" src="assets/banner1.jpg" alt="First slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block img-fluid" src="assets/banner2.jpg" alt="Second slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block img-fluid" src="assets/banner3.jpg" alt="Third slide">
+                        </div>
                     </div>
-
-                    <div class="col-lg-4 col-md-6 mb-4">
-                      <div class="card h-100">
-                        <a href="#"><img class="card-img-top" src="assets/p22.jpg" alt=""></a>
-                        <div class="card-body">
-                          <h4 class="card-title">
-                            <a href="#">Shirt</a>
-                          </h4>
-                          <h5>$24.99</h5>
-                          <p class="card-text">Oxford - Mens Shirt</p>
-                        </div>
-                        <div class="card-footer">
-                          <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                          <!-- <button class="ar-button" onclick="window.app.showChair('chair1');"><i class="fas fa-camera"></i></button> -->
-                        </div>
-                      </div>
-                    </div>
-
-                  </div>
+                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
                 </div>
-              </div>
-              <div class="tab-pane fade show active" id="women" role="tabpanel">
-                <div class="tab-single">
-                  <div class="row">
 
-                    <div class="col-lg-4 col-md-6 mb-4">
-                      <div class="card h-100">
-                        <a href="#"><img class="card-img-top" src="assets/p18.jpg" alt=""></a>
-                        <div class="card-body">
-                          <h4 class="card-title">
-                            <a href="#">Woman pink dress</a>
-                          </h4>
-                          <h5>$84.99</h5>
-                          <p class="card-text">Women Pink Floral Print Dress</p>
+                <div class="row">
+                    <div class="col-12">
+
+
+                        <div class="nav-main">
+                            <!-- Tab Nav -->
+                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                <!-- <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#man" role="tab">Men</a></li>
+                                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#women" role="tab">Women</a></li>
+                                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#furniture" role="tab">Furniture</a>
+                                </li>
+                                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#accessories" role="tab">Accessories</a></li> -->
+                            </ul>
+                            <!--/ End Tab Nav -->
                         </div>
-                        <div class="card-footer">
-                          <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                          <button class="ar-button" onclick="window.app.showChair('dress');"><i
-                              class="fas fa-camera"></i></button>
+                        <div class="tab-content" id="myTabContent">
+                            <!-- Start Single Tab -->
+                            <div class="tab-pane fade show active" id="men" role="tabpanel">
+                                <div class="tab-single">
+                                    <div class="row">
+                                        <div class="col-lg-4 col-md-6 mb-4">
+                                            <div class="card h-100">
+                                                <a href="#"><img class="card-img-top" src="assets/p20.jpg" alt=""></a>
+                                                <div class="card-body">
+                                                    <h4 class="card-title">
+                                                        <a href="#">T-Shrit</a>
+                                                    </h4>
+                                                    <h5>$19.99</h5>
+                                                    <p class="card-text">FC Bayern Munchen T-Shirt</p>
+                                                </div>
+                                                <div class="card-footer">
+                                                    <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                                                    <button class="ar-button" onclick="window.app.showARObject('Shirt1', true, true,'rgb(255,0,255)','0.15');">
+                                                      <i class="fas fa-camera"></i>
+                                                    </button>
+                                                    <button class="web-button" onclick="window.app.show3dObject('Shirt1', true, true,'rgb(255,0,255)','2.0','FC Bayern Munchen T-Shirt');">
+                                                        <i class="fa fa-desktop"></i>
+                                                      </button>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-4 col-md-6 mb-4">
+                                            <div class="card h-100">
+                                                <a href="#"><img class="card-img-top" src="assets/p22.jpg" alt=""></a>
+                                                <div class="card-body">
+                                                    <h4 class="card-title">
+                                                        <a href="#">Shirt</a>
+                                                    </h4>
+                                                    <h5>$24.99</h5>
+                                                    <p class="card-text">Oxford - Mens Shirt</p>
+                                                </div>
+                                                <div class="card-footer">
+                                                    <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                                                    <!-- <button class="ar-button" onclick="window.app.showChair('chair1');"><i class="fas fa-camera"></i></button> -->
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tab-pane fade show active" id="women" role="tabpanel">
+                                <div class="tab-single">
+                                    <div class="row">
+
+                                        <div class="col-lg-4 col-md-6 mb-4">
+                                            <div class="card h-100">
+                                                <a href="#"><img class="card-img-top" src="assets/p18.jpg" alt=""></a>
+                                                <div class="card-body">
+                                                    <h4 class="card-title">
+                                                        <a href="#">Woman pink dress</a>
+                                                    </h4>
+                                                    <h5>$84.99</h5>
+                                                    <p class="card-text">Women Pink Floral Print Dress</p>
+                                                </div>
+                                                <div class="card-footer">
+                                                    <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+
+                                                    <button class="ar-button" onclick="window.app.showARObject('dress', true, true,'rgb(255,0,255)','0.15');">
+                                                    <i class="fas fa-camera"></i>
+                                                    </button>
+                                                    <button class="web-button" onclick="window.app.show3dObject('dress', true, true,'rgb(255,0,255)','0.025','Women Pink Floral Print Dress');">
+                                                    <i class="fa fa-desktop"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-4 col-md-6 mb-4">
+                                            <div class="card h-100">
+                                                <a href="#"><img class="card-img-top" src="assets/p2.jpg" alt=""></a>
+                                                <div class="card-body">
+                                                    <h4 class="card-title">
+                                                        <a href="#">Women Dress</a>
+                                                    </h4>
+                                                    <h5>$84.99</h5>
+                                                    <p class="card-text">Blue Top For Women</p>
+                                                </div>
+                                                <div class="card-footer">
+                                                    <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade show active" id="furniture" role="tabpanel">
+                                <div class="tab-single">
+                                    <div class="row">
+
+                                        <div class="col-lg-4 col-md-6 mb-4">
+                                            <div class="card h-100">
+                                                <a href="#"><img class="card-img-top" src="assets/chair1.jpg" alt=""></a>
+                                                <div class="card-body">
+                                                    <h4 class="card-title">
+                                                        <a href="#">Item One</a>
+                                                    </h4>
+                                                    <h5>$84.99</h5>
+                                                    <p class="card-text">Chair
+                                                    </p>
+                                                </div>
+                                                <div class="card-footer">
+                                                    <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+
+                                                    <button class="ar-button" onclick="window.app.showARObject('chair1', true, true,'rgb(255,0,255)','0.15');">
+                                                    <i class="fas fa-camera"></i>
+                                                    </button>
+                                                    <button class="web-button" onclick="window.app.show3dObject('chair1', true, true,'rgb(255,0,255)','10.0','Chair1');">
+                                                    <i class="fa fa-desktop"></i>
+                                                    </button>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-4 col-md-6 mb-4">
+                                            <div class="card h-100">
+                                                <a href="#"><img class="card-img-top" src="assets/chair2.jpg" alt=""></a>
+                                                <div class="card-body">
+                                                    <h4 class="card-title">
+                                                        <a href="#">Item Two</a>
+                                                    </h4>
+                                                    <h5>$24.99</h5>
+                                                    <p class="card-text">chair</p>
+                                                </div>
+                                                <div class="card-footer">
+                                                    <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+
+                                                    <button class="ar-button" onclick="window.app.showARObject('chair2', true, true,'rgb(255,0,255)','0.15');">
+                                                    <i class="fas fa-camera"></i>
+                                                    </button>
+                                                    <button class="web-button" onclick="window.app.show3dObject('chair2', true, true,'rgb(255,0,255)','10.0','Chair2');">
+                                                    <i class="fa fa-desktop"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-4 col-md-6 mb-4">
+                                            <div class="card h-100">
+                                                <a href="#"><img class="card-img-top" src="assets/chair3.jpg" alt=""></a>
+                                                <div class="card-body">
+                                                    <h4 class="card-title">
+                                                        <a href="#">Item Three</a>
+                                                    </h4>
+                                                    <h5>$24.99</h5>
+                                                    <p class="card-text">chair
+                                                    </p>
+                                                </div>
+                                                <div class="card-footer">
+                                                    <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+
+                                                    <button class="ar-button" onclick="window.app.showARObject('chair3', true, true,'rgb(255,0,255)','0.15');">
+                                                    <i class="fas fa-camera"></i>
+                                                    </button>
+                                                    <button class="web-button" onclick="window.app.show3dObject('chair3', true, true,'rgb(255,0,255)','10.0','Chair3');">
+                                                    <i class="fa fa-desktop"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-4 col-md-6 mb-4">
+                                            <div class="card h-100">
+                                                <a href="#"><img class="card-img-top" src="assets/chair4.jpg" alt=""></a>
+                                                <div class="card-body">
+                                                    <h4 class="card-title">
+                                                        <a href="#">Item Four</a>
+                                                    </h4>
+                                                    <h5>$24.99</h5>
+                                                    <p class="card-text">chair
+                                                    </p>
+                                                </div>
+                                                <div class="card-footer">
+                                                    <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+
+                                                    <button class="ar-button" onclick="window.app.showARObject('chair4', true, true,'rgb(255,0,255)','0.15');">
+                                                    <i class="fas fa-camera"></i>
+                                                    </button>
+                                                    <button class="web-button" onclick="window.app.show3dObject('chair4', true, true,'rgb(255,0,255)','10.0','Chair4');">
+                                                    <i class="fa fa-desktop"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-4 col-md-6 mb-4">
+                                            <div class="card h-100">
+                                                <a href="#"><img class="card-img-top" src="assets/chair5.jpg" alt=""></a>
+                                                <div class="card-body">
+                                                    <h4 class="card-title">
+                                                        <a href="#">Item Five</a>
+                                                    </h4>
+                                                    <h5>$24.99</h5>
+                                                    <p class="card-text">chair</p>
+                                                </div>
+                                                <div class="card-footer">
+                                                    <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+
+                                                    <button class="ar-button" onclick="window.app.showARObject('chair5', true, true,'rgb(255,0,255)','0.15');">
+                                                    <i class="fas fa-camera"></i>
+                                                    </button>
+                                                    <button class="web-button" onclick="window.app.show3dObject('chair5', true, true,'rgb(255,0,255)','10.0','Chair5');">
+                                                    <i class="fa fa-desktop"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-4 col-md-6 mb-4">
+                                            <div class="card h-100">
+                                                <a href="#"><img class="card-img-top" src="assets/chair6.jpg" alt=""></a>
+                                                <div class="card-body">
+                                                    <h4 class="card-title">
+                                                        <a href="#">Item Six</a>
+                                                    </h4>
+                                                    <h5>$24.99</h5>
+                                                    <p class="card-text">Chair!
+                                                    </p>
+                                                </div>
+                                                <div class="card-footer">
+                                                    <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+
+                                                    <button class="ar-button" onclick="window.app.showARObject('chair6', true, true,'rgb(255,0,255)','0.15');">
+                                                    <i class="fas fa-camera"></i>
+                                                    </button>
+                                                    <button class="web-button" onclick="window.app.show3dObject('chair6', true, true,'rgb(255,0,255)','10.0','Chair6');">
+                                                    <i class="fa fa-desktop"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade show active" id="accessories" role="tabpanel">
+                                <div class="tab-single">
+                                    <div class="row">
+
+                                        <div class="col-lg-4 col-md-6 mb-4">
+                                            <div class="card h-100">
+                                                <a href="#"><img class="card-img-top" src="assets/ac-p2.jpg" alt=""></a>
+                                                <div class="card-body">
+                                                    <h4 class="card-title">
+                                                        <a href="#">Item Bag</a>
+                                                    </h4>
+                                                    <h5>$84.99</h5>
+                                                    <p class="card-text">Baggit - Sling Bag</p>
+                                                </div>
+                                                <div class="card-footer">
+                                                    <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+
+                                                    <button class="ar-button" onclick="window.app.showARObject('handbag', true, true,'rgb(255,0,255)','0.15');">
+                                                    <i class="fas fa-camera"></i>
+                                                    </button>
+                                                    <button class="web-button" onclick="window.app.show3dObject('handbag', true, true,'rgb(255,0,255)','0.15','Baggit - Sling Bag');">
+                                                    <i class="fa fa-desktop"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-4 col-md-6 mb-4">
+                                            <div class="card h-100">
+                                                <a href="#"><img class="card-img-top" src="assets/ac-p4.jpg" alt=""></a>
+                                                <div class="card-body">
+                                                    <h4 class="card-title">
+                                                        <a href="#">Item Shoe</a>
+                                                    </h4>
+                                                    <h5>$84.99</h5>
+                                                    <p class="card-text">LONDON STEPS - Sanda</p>
+                                                </div>
+                                                <div class="card-footer">
+                                                    <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+
+                                                    <button class="ar-button" onclick="window.app.showARObject('Shoe', true, true,'rgb(255,0,255)','0.15');">
+                                                    <i class="fas fa-camera"></i>
+                                                    </button>
+                                                    <button class="web-button" onclick="window.app.show3dObject('Shoe', true, true,'rgb(255,0,255)','1.5','LONDON STEPS - Sanda');">
+                                                    <i class="fa fa-desktop"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <!--/ End Single Tab -->
                         </div>
-                      </div>
                     </div>
-
-                    <div class="col-lg-4 col-md-6 mb-4">
-                      <div class="card h-100">
-                        <a href="#"><img class="card-img-top" src="assets/p2.jpg" alt=""></a>
-                        <div class="card-body">
-                          <h4 class="card-title">
-                            <a href="#">Women Dress</a>
-                          </h4>
-                          <h5>$84.99</h5>
-                          <p class="card-text">Blue Top For Women</p>
-                        </div>
-                        <div class="card-footer">
-                          <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-
-                        </div>
-                      </div>
-                    </div>
-
-                  </div>
                 </div>
-              </div>
-              <div class="tab-pane fade show active" id="furniture" role="tabpanel">
-                <div class="tab-single">
-                  <div class="row">
+                <!-- /.row -->
 
-                    <div class="col-lg-4 col-md-6 mb-4">
-                      <div class="card h-100">
-                        <a href="#"><img class="card-img-top" src="assets/chair1.jpg" alt=""></a>
-                        <div class="card-body">
-                          <h4 class="card-title">
-                            <a href="#">Item One</a>
-                          </h4>
-                          <h5>$84.99</h5>
-                          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam
-                            aspernatur!</p>
-                        </div>
-                        <div class="card-footer">
-                          <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                          <button class="ar-button" onclick="window.app.showChair('chair1');"><i
-                              class="fas fa-camera"></i></button>
-                        </div>
-
-                      </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 mb-4">
-                      <div class="card h-100">
-                        <a href="#"><img class="card-img-top" src="assets/chair2.jpg" alt=""></a>
-                        <div class="card-body">
-                          <h4 class="card-title">
-                            <a href="#">Item Two</a>
-                          </h4>
-                          <h5>$24.99</h5>
-                          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam
-                            aspernatur! Lorem ipsum dolor sit amet.</p>
-                        </div>
-                        <div class="card-footer">
-                          <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                          <button class="ar-button" onclick="window.app.showChair('Lamp01');"><i
-                              class="fas fa-camera"></i></button>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 mb-4">
-                      <div class="card h-100">
-                        <a href="#"><img class="card-img-top" src="assets/chair3.jpg" alt=""></a>
-                        <div class="card-body">
-                          <h4 class="card-title">
-                            <a href="#">Item Three</a>
-                          </h4>
-                          <h5>$24.99</h5>
-                          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam
-                            aspernatur!</p>
-                        </div>
-                        <div class="card-footer">
-                          <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                          <button class="ar-button" onclick="window.app.showChair('Sofa01');"><i
-                              class="fas fa-camera"></i></button>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 mb-4">
-                      <div class="card h-100">
-                        <a href="#"><img class="card-img-top" src="assets/chair4.jpg" alt=""></a>
-                        <div class="card-body">
-                          <h4 class="card-title">
-                            <a href="#">Item Four</a>
-                          </h4>
-                          <h5>$24.99</h5>
-                          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam
-                            aspernatur!</p>
-                        </div>
-                        <div class="card-footer">
-                          <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                          <button class="ar-button" onclick="window.app.showChair('Stool01');"><i
-                              class="fas fa-camera"></i></button>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 mb-4">
-                      <div class="card h-100">
-                        <a href="#"><img class="card-img-top" src="assets/chair5.jpg" alt=""></a>
-                        <div class="card-body">
-                          <h4 class="card-title">
-                            <a href="#">Item Five</a>
-                          </h4>
-                          <h5>$24.99</h5>
-                          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam
-                            aspernatur! Lorem ipsum dolor sit amet.</p>
-                        </div>
-                        <div class="card-footer">
-                          <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                          <button class="ar-button" onclick="window.app.showChair('Table01');"><i
-                              class="fas fa-camera"></i></button>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 mb-4">
-                      <div class="card h-100">
-                        <a href="#"><img class="card-img-top" src="assets/chair6.jpg" alt=""></a>
-                        <div class="card-body">
-                          <h4 class="card-title">
-                            <a href="#">Item Six</a>
-                          </h4>
-                          <h5>$24.99</h5>
-                          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam
-                            aspernatur!</p>
-                        </div>
-                        <div class="card-footer">
-                          <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                          <button class="ar-button" onclick="window.app.showChair('chair6');"><i
-                              class="fas fa-camera"></i></button>
-                        </div>
-                      </div>
-                    </div>
-
-
-
-                  </div>
-                </div>
-              </div>
-              <div class="tab-pane fade show active" id="accessories" role="tabpanel">
-                <div class="tab-single">
-                  <div class="row">
-
-                    <div class="col-lg-4 col-md-6 mb-4">
-                      <div class="card h-100">
-                        <a href="#"><img class="card-img-top" src="assets/ac-p2.jpg" alt=""></a>
-                        <div class="card-body">
-                          <h4 class="card-title">
-                            <a href="#">Item Bag</a>
-                          </h4>
-                          <h5>$84.99</h5>
-                          <p class="card-text">Baggit - Sling Bag</p>
-                        </div>
-                        <div class="card-footer">
-                          <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                          <button class="ar-button" onclick="window.app.showChair('handbag');"><i
-                              class="fas fa-camera"></i></button>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 mb-4">
-                      <div class="card h-100">
-                        <a href="#"><img class="card-img-top" src="assets/ac-p4.jpg" alt=""></a>
-                        <div class="card-body">
-                          <h4 class="card-title">
-                            <a href="#">Item Shoe</a>
-                          </h4>
-                          <h5>$84.99</h5>
-                          <p class="card-text">LONDON STEPS - Sanda</p>
-                        </div>
-                        <div class="card-footer">
-                          <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                          <button class="ar-button" onclick="window.app.showChair('Shoe');"><i
-                              class="fas fa-camera"></i></button>
-                        </div>
-                      </div>
-                    </div>
-
-                  </div>
-                </div>
-              </div>
-              <!--/ End Single Tab -->
             </div>
-          </div>
+            <!-- /.col-lg-9 -->
+
         </div>
         <!-- /.row -->
 
-      </div>
-      <!-- /.col-lg-9 -->
-
-    </div>
-    <!-- /.row -->
-
-  </div>
-  <!-- /.container -->
-
-  <!-- Footer -->
-  <footer class="py-5 bg-dark">
-    <div class="container">
-      <p class="m-0 text-center text-white">Copyright &copy; Your Website 2021</p>
     </div>
     <!-- /.container -->
-  </footer>
 
-  <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+        <div class="container">
+            <p class="m-0 text-center text-white">Copyright &copy; Your Website 2021</p>
+        </div>
+        <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 </body>
 
